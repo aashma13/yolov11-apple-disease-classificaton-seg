@@ -1,0 +1,166 @@
+[INFO] Converted train: {'split': 'train', 'num_images': 13500, 'num_annotations': 13500, 'num_empty_images': 0, 'num_skipped_annotations': 0, 'label_counts': {'Black Rot': 2760, 'Powdery Mildew': 2856, 'Healthy': 2532, 'Black Pox': 2772, 'Anthracnose': 2580}}
+[INFO] Converted valid: {'split': 'valid', 'num_images': 940, 'num_annotations': 936, 'num_empty_images': 4, 'num_skipped_annotations': 0, 'label_counts': {'Healthy': 112, 'Powdery Mildew': 176, 'Anthracnose': 232, 'Black Rot': 184, 'Black Pox': 232}}
+[INFO] Converted test: {'split': 'test', 'num_images': 864, 'num_annotations': 863, 'num_empty_images': 2, 'num_skipped_annotations': 0, 'label_counts': {'Black Rot': 144, 'Anthracnose': 207, 'Healthy': 132, 'Powdery Mildew': 192, 'Black Pox': 188}}
+[INFO] data.yaml: seg/SegmentAppledisease-5/data.yaml
+[INFO] Classes: ['Anthracnose', 'Black Pox', 'Black Rot', 'Healthy', 'Powdery Mildew']
+
+Downloading https://github.com/ultralytics/assets/releases/download/v8.4.0/yolo11l-seg.pt to 'yolo11l-seg.pt': 100% ━━━━━━━━━━━━ 53.5MB 72.0MB/s 0.7s
+Ultralytics 8.4.37 🚀 Python-3.10.12 torch-2.9.0+cu128 CUDA:5 (NVIDIA GeForce RTX 4090, 24111MiB)
+
+engine/trainer: agnostic_nms=False, amp=False, angle=1.0, augment=False, auto_augment=randaugment, batch=8, bgr=0.0, box=7.5, cache=False, cfg=None, classes=None, close_mosaic=10, cls=0.5, cls_pw=0.0, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=True, cutmix=0.0, data=seg/SegmentAppledisease-5/data.yaml, degrees=0.0, deterministic=True, device=5, dfl=1.5, dnn=False, dropout=0.0, dynamic=False, embed=None, end2end=None, epochs=30, erasing=0.4, exist_ok=True, fliplr=0.0, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, half=False, hsv_h=0.0, hsv_s=0.0, hsv_v=0.0, imgsz=640, int8=False, iou=0.7, keras=False, kobj=1.0, line_width=None, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=yolo11l-seg.pt, momentum=0.937, mosaic=0.0, multi_scale=0.0, name=yolo11l_seg_30, nbs=64, nms=False, opset=None, optimize=False, optimizer=auto, overlap_mask=True, patience=5, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=./runs/segment/apple_disease_seg, rect=False, resume=False, retina_masks=False, rle=1.0, save=True, save_conf=False, save_crop=False, save_dir=runs/segment/apple_disease_seg/yolo11l_seg_30, save_frames=False, save_json=False, save_period=10, save_txt=False, scale=0.0, seed=0, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=segment, time=None, tracker=botsort.yaml, translate=0.0, val=True, verbose=False, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=2, workspace=None
+
+Overriding model.yaml nc=80 with nc=5
+
+                   from  n    params  module                                       arguments
+  0                  -1  1      1856  ultralytics.nn.modules.conv.Conv             [3, 64, 3, 2]
+  1                  -1  1     73984  ultralytics.nn.modules.conv.Conv             [64, 128, 3, 2]
+  2                  -1  2    173824  ultralytics.nn.modules.block.C3k2            [128, 256, 2, True, 0.25]
+  3                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]
+  4                  -1  2    691712  ultralytics.nn.modules.block.C3k2            [256, 512, 2, True, 0.25]
+  5                  -1  1   2360320  ultralytics.nn.modules.conv.Conv             [512, 512, 3, 2]
+  6                  -1  2   2234368  ultralytics.nn.modules.block.C3k2            [512, 512, 2, True]
+  7                  -1  1   2360320  ultralytics.nn.modules.conv.Conv             [512, 512, 3, 2]
+  8                  -1  2   2234368  ultralytics.nn.modules.block.C3k2            [512, 512, 2, True]
+  9                  -1  1    656896  ultralytics.nn.modules.block.SPPF            [512, 512, 5]
+ 10                  -1  2   1455616  ultralytics.nn.modules.block.C2PSA           [512, 512, 2]
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 13                  -1  2   2496512  ultralytics.nn.modules.block.C3k2            [1024, 512, 2, True]
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 16                  -1  2    756736  ultralytics.nn.modules.block.C3k2            [1024, 256, 2, True]
+ 17                  -1  1    590336  ultralytics.nn.modules.conv.Conv             [256, 256, 3, 2]
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 19                  -1  2   2365440  ultralytics.nn.modules.block.C3k2            [768, 512, 2, True]
+ 20                  -1  1   2360320  ultralytics.nn.modules.conv.Conv             [512, 512, 3, 2]
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 22                  -1  2   2496512  ultralytics.nn.modules.block.C3k2            [1024, 512, 2, True]
+ 23        [16, 19, 22]  1   3721087  ultralytics.nn.modules.head.Segment          [5, 32, 256, 16, None, [256, 512, 512]]
+
+YOLO11l-seg summary: 380 layers, 27,620,543 parameters, 27,620,527 gradients, 132.6 GFLOPs
+
+Transferred 1071/1077 items from pretrained weights
+Freezing layer 'model.23.dfl.conv.weight'
+
+train: Fast image access ✅ (ping: 0.0±0.0 ms, read: 1151.4±400.6 MB/s, size: 22.8 KB)
+train: Scanning seg/SegmentAppledisease-5/train/labels... 13500 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 13500/13500 2.9Kit/s 4.7s
+train: New cache created: seg/SegmentAppledisease-5/train/labels.cache
+
+val: Fast image access ✅ (ping: 0.0±0.0 ms, read: 891.9±553.7 MB/s, size: 30.4 KB)
+val: Scanning seg/SegmentAppledisease-5/valid/labels... 940 images, 4 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 940/940 3.1Kit/s 0.3s
+val: New cache created: seg/SegmentAppledisease-5/valid/labels.cache
+
+optimizer: 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically...
+optimizer: AdamW(lr=0.001111, momentum=0.9) with parameter groups 176 weight(decay=0.0), 187 weight(decay=0.0005), 186 bias(decay=0.0)
+
+Plotting labels to runs/segment/apple_disease_seg/yolo11l_seg_30/labels.jpg...
+Image sizes 640 train, 640 val
+Using 2 dataloader workers
+Logging results to runs/segment/apple_disease_seg/yolo11l_seg_30
+Starting training for 30 epochs...
+
+      Epoch    GPU_mem   box_loss   seg_loss   cls_loss   dfl_loss   sem_loss  Instances       Size
+       1/30      11.5G      0.139     0.2118      1.154     0.9723          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 6.0it/s 4:42
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 7.7it/s 7.7s
+                   all        940        936      0.336      0.851      0.539      0.504      0.336      0.851      0.539       0.51
+
+       2/30      11.3G    0.08929     0.1077     0.9347     0.9276          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 6.2it/s 4:32
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 8.0it/s 7.4s
+                   all        940        936      0.515      0.727      0.586      0.552      0.515      0.727      0.586      0.547
+
+       3/30      11.3G    0.06914    0.09119     0.8386     0.9155          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 6.3it/s 4:30
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 8.2it/s 7.2s
+                   all        940        936      0.573      0.779      0.686       0.66      0.573      0.779      0.686      0.665
+
+       4/30      11.3G    0.05747    0.08015     0.7873     0.9102          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 6.2it/s 4:31
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 8.1it/s 7.3s
+                   all        940        936      0.586       0.79      0.696      0.656      0.586       0.79      0.696      0.661
+
+       5/30      11.3G     0.0479    0.06808     0.7246     0.9053          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 4.9it/s 5:47
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 7.8it/s 7.6s
+                   all        940        936      0.621       0.73      0.687       0.65      0.621       0.73      0.687      0.662
+
+       6/30      11.3G    0.04531    0.06116     0.6803     0.9043          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 6.2it/s 4:32
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 8.1it/s 7.3s
+                   all        940        936      0.635      0.729      0.697      0.637      0.635      0.729      0.697      0.635
+
+       7/30      11.3G    0.04467    0.06481      0.663     0.9037          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 6.2it/s 4:33
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 7.7it/s 7.6s
+                   all        940        936       0.65      0.738       0.73      0.684       0.65      0.738       0.73      0.716
+
+       8/30      11.3G    0.03804     0.0602     0.6298     0.9016          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 6.2it/s 4:34
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 8.0it/s 7.4s
+                   all        940        936      0.625      0.764      0.702      0.642      0.625      0.764      0.702      0.664
+
+       9/30      11.3G     0.0375    0.05889     0.6007     0.9015          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 6.2it/s 4:34
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 7.7it/s 7.7s
+                   all        940        936      0.662      0.784      0.751      0.713      0.662      0.784      0.751      0.717
+
+      10/30      11.3G    0.03489    0.05577     0.5859     0.9007          0          3        640: 100% ━━━━━━━━━━━━ 1688/1688 6.2it/s 4:34
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 8.0it/s 7.4s
+                   all        940        936      0.657      0.758      0.745      0.702      0.657      0.758      0.745      0.702
+
+      11/30      11.3G    0.03432    0.05342     0.5562     0.8996          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 6.2it/s 4:34
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 7.9it/s 7.5s
+                   all        940        936      0.655      0.738      0.729      0.686      0.655      0.738      0.729      0.682
+
+      12/30      11.3G    0.03065    0.04902     0.5313     0.8986          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 6.2it/s 4:33
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 7.5it/s 7.8s
+                   all        940        936      0.666      0.736      0.723      0.677      0.666      0.736      0.723      0.679
+
+      13/30      11.3G    0.02846    0.04716     0.5102     0.8983          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 6.2it/s 4:32
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 8.0it/s 7.3s
+                   all        940        936      0.713      0.725      0.746       0.68      0.713      0.725      0.746      0.681
+
+      14/30      11.3G    0.02673    0.04286     0.4884     0.8973          0          4        640: 100% ━━━━━━━━━━━━ 1688/1688 6.2it/s 4:32
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 7.7it/s 7.7s
+                   all        940        936      0.651      0.729      0.711       0.64      0.651      0.729      0.711       0.65
+
+EarlyStopping: Training stopped early as no improvement observed in last 5 epochs. Best results observed at epoch 9, best model saved as best.pt.
+To update EarlyStopping(patience=5) pass a new patience value, i.e. `patience=300` or use `patience=0` to disable EarlyStopping.
+
+14 epochs completed in 1.126 hours.
+
+Optimizer stripped from runs/segment/apple_disease_seg/yolo11l_seg_30/weights/last.pt, 55.8MB
+Optimizer stripped from runs/segment/apple_disease_seg/yolo11l_seg_30/weights/best.pt, 55.8MB
+
+Validating runs/segment/apple_disease_seg/yolo11l_seg_30/weights/best.pt...
+Ultralytics 8.4.37 🚀 Python-3.10.12 torch-2.9.0+cu128 CUDA:5 (NVIDIA GeForce RTX 4090, 24111MiB)
+YOLO11l-seg summary (fused): 204 layers, 27,588,447 parameters, 0 gradients, 131.8 GFLOPs
+
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 59/59 8.6it/s 6.9s
+                   all        940        936      0.661      0.783      0.751      0.713      0.661      0.783      0.751      0.717
+
+Speed: 0.1ms preprocess, 4.4ms inference, 0.0ms loss, 0.7ms postprocess per image
+Results saved to runs/segment/apple_disease_seg/yolo11l_seg_30
+
+Ultralytics 8.4.37 🚀 Python-3.10.12 torch-2.9.0+cu128 CUDA:5 (NVIDIA GeForce RTX 4090, 24111MiB)
+YOLO11l-seg summary (fused): 204 layers, 27,588,447 parameters, 0 gradients, 131.8 GFLOPs
+
+val: Fast image access ✅ (ping: 0.0±0.0 ms, read: 1439.2±789.7 MB/s, size: 23.7 KB)
+val: Scanning seg/SegmentAppledisease-5/valid/labels.cache... 940 images, 4 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 940/940 281.6Mit/s 0.0s
+
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 118/118 13.1it/s 9.0s
+                   all        940        936      0.662      0.783       0.75       0.71      0.662      0.783       0.75      0.708
+
+Speed: 0.3ms preprocess, 4.8ms inference, 0.0ms loss, 0.6ms postprocess per image
+Saving runs/segment/val5/predictions.json...
+Results saved to runs/segment/val5
+
+Ultralytics 8.4.37 🚀 Python-3.10.12 torch-2.9.0+cu128 CUDA:5 (NVIDIA GeForce RTX 4090, 24111MiB)
+
+val: Fast image access ✅ (ping: 0.0±0.0 ms, read: 1063.8±306.5 MB/s, size: 19.8 KB)
+val: Scanning seg/SegmentAppledisease-5/test/labels... 322 images, 2 backgrounds, 0 corrupt: 37% ━━━━──────── 322/864
+val: Scanning seg/SegmentAppledisease-5/test/labels... 640 images, 2 backgrounds, 0 corrupt: 74% ━━━━━━━━╸─── 640/864
+val: Scanning seg/SegmentAppledisease-5/test/labels... 864 images, 2 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 864/864 3.2Kit/s 0.3s
+val: New cache created: seg/SegmentAppledisease-5/test/labels.cache
+
+                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 108/108 14.5it/s 7.4s
+                   all        864        863      0.672      0.808      0.804      0.758      0.672      0.808      0.804      0.758
+
+Speed: 0.4ms preprocess, 3.8ms inference, 0.0ms loss, 0.6ms postprocess per image
+Saving runs/segment/val6/predictions.json...
+Results saved to runs/segment/val6
+
+[INFO] Run dir: runs/segment/apple_disease_seg/yolo11l_seg_30
+[INFO] Best weights: runs/segment/apple_disease_seg/yolo11l_seg_30/weights/best.pt

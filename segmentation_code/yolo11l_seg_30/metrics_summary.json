@@ -1,0 +1,125 @@
+{
+  "dataset_root": "/media/drive2/manish/codes/aml/skin-lesion-classification/fed_qwen_medmcqa_fcp/DAI/seg/SegmentAppledisease-5",
+  "data_yaml": "/media/drive2/manish/codes/aml/skin-lesion-classification/fed_qwen_medmcqa_fcp/DAI/seg/SegmentAppledisease-5/data.yaml",
+  "model": "yolo11l-seg.pt",
+  "classes": [
+    "Anthracnose",
+    "Black Pox",
+    "Black Rot",
+    "Healthy",
+    "Powdery Mildew"
+  ],
+  "conversion_stats": {
+    "train": {
+      "split": "train",
+      "num_images": 13500,
+      "num_annotations": 13500,
+      "num_empty_images": 0,
+      "num_skipped_annotations": 0,
+      "label_counts": {
+        "Black Rot": 2760,
+        "Powdery Mildew": 2856,
+        "Healthy": 2532,
+        "Black Pox": 2772,
+        "Anthracnose": 2580
+      }
+    },
+    "valid": {
+      "split": "valid",
+      "num_images": 940,
+      "num_annotations": 936,
+      "num_empty_images": 4,
+      "num_skipped_annotations": 0,
+      "label_counts": {
+        "Healthy": 112,
+        "Powdery Mildew": 176,
+        "Anthracnose": 232,
+        "Black Rot": 184,
+        "Black Pox": 232
+      }
+    },
+    "test": {
+      "split": "test",
+      "num_images": 864,
+      "num_annotations": 863,
+      "num_empty_images": 2,
+      "num_skipped_annotations": 0,
+      "label_counts": {
+        "Black Rot": 144,
+        "Anthracnose": 207,
+        "Healthy": 132,
+        "Powdery Mildew": 192,
+        "Black Pox": 188
+      }
+    }
+  },
+  "best_weights": "/media/drive2/manish/codes/aml/runs/segment/runs/segment/apple_disease_seg/yolo11l_seg_30/weights/best.pt",
+  "val_metrics": {
+    "box": {
+      "precision": 0.661609741272718,
+      "recall": 0.7831911656412668,
+      "mAP50": 0.7503531717612868,
+      "mAP50_95": 0.7100854053483563,
+      "per_class_mAP50_95": [
+        0.602186889325155,
+        0.7230068204427497,
+        0.4380882182016686,
+        0.8711408128837904,
+        0.9160042858884188
+      ]
+    },
+    "seg": {
+      "precision": 0.661609741272718,
+      "recall": 0.7831911656412668,
+      "mAP50": 0.7503531717612868,
+      "mAP50_95": 0.7083722903351916,
+      "per_class_mAP50_95": [
+        0.59994156892543,
+        0.7213739978225162,
+        0.433272867404102,
+        0.8716446902327892,
+        0.9156283272911198
+      ]
+    },
+    "speed_ms_per_image": {
+      "preprocess": 0.32913549704120515,
+      "inference": 4.839698476729261,
+      "loss": 0.0006988413626962203,
+      "postprocess": 0.5753551995594728
+    }
+  },
+  "test_metrics": {
+    "box": {
+      "precision": 0.6723293628993863,
+      "recall": 0.8075776926230487,
+      "mAP50": 0.8043678647546747,
+      "mAP50_95": 0.7584312630179114,
+      "per_class_mAP50_95": [
+        0.5227241741134143,
+        0.7662405362125125,
+        0.6826369418704504,
+        0.8827839172207218,
+        0.9377707456724581
+      ]
+    },
+    "seg": {
+      "precision": 0.6723293628993863,
+      "recall": 0.8075776926230487,
+      "mAP50": 0.8042600102408966,
+      "mAP50_95": 0.7581864179252488,
+      "per_class_mAP50_95": [
+        0.5169676592693404,
+        0.770567469895688,
+        0.6811914114066462,
+        0.8858601698907203,
+        0.9363453791638484
+      ]
+    },
+    "speed_ms_per_image": {
+      "preprocess": 0.36561659099889865,
+      "inference": 3.758029415823532,
+      "loss": 0.0007295898453944743,
+      "postprocess": 0.6083591453244919
+    }
+  }
+}

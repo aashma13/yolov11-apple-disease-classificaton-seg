@@ -1,0 +1,6 @@
+class_id,class_name,test_instances,pred_instances,pixel_iou,pixel_dice,instance_mean_iou,instance_mean_dice
+0,Anthracnose,52,0,0.000000,0.000000,0.000000,0.000000
+1,Black Pox,47,13,0.000000,0.000000,0.000000,0.000000
+2,Black Rot,36,7,0.653061,0.187952,0.653352,0.788687
+3,Healthy,33,0,0.000000,0.000000,0.000000,0.000000
+4,Powdery Mildew,48,4,0.000000,0.000000,0.000000,0.000000

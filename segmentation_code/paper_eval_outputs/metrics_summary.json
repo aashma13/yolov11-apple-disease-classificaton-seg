@@ -1,0 +1,78 @@
+{
+  "weights": "/media/drive2/manish/codes/aml/skin-lesion-classification/fed_qwen_medmcqa_fcp/DAI/seg/yolo11l_seg_30/weights/best.pt",
+  "data": "/media/drive2/manish/codes/aml/skin-lesion-classification/fed_qwen_medmcqa_fcp/DAI/seg/SegmentAppledisease-5/data.yaml",
+  "split": "test",
+  "num_images": 182,
+  "conf_threshold": 0.25,
+  "iou_match_threshold": 0.5,
+  "class_names": [
+    "Anthracnose",
+    "Black Pox",
+    "Black Rot",
+    "Healthy",
+    "Powdery Mildew"
+  ],
+  "macro_pixel_iou": 0.1306121020157061,
+  "macro_pixel_dice": 0.037590349217531606,
+  "weighted_pixel_iou": 0.10884341834642175,
+  "weighted_pixel_dice": 0.03132529101460967,
+  "per_class": [
+    {
+      "class_id": 0,
+      "class_name": "Anthracnose",
+      "test_instances": 52,
+      "pred_instances": 0,
+      "pixel_iou": 0.0,
+      "pixel_dice": 0.0,
+      "instance_mean_iou": 0.0,
+      "instance_mean_dice": 0.0
+    },
+    {
+      "class_id": 1,
+      "class_name": "Black Pox",
+      "test_instances": 47,
+      "pred_instances": 13,
+      "pixel_iou": 0.0,
+      "pixel_dice": 0.0,
+      "instance_mean_iou": 0.0,
+      "instance_mean_dice": 0.0
+    },
+    {
+      "class_id": 2,
+      "class_name": "Black Rot",
+      "test_instances": 36,
+      "pred_instances": 7,
+      "pixel_iou": 0.6530605100785305,
+      "pixel_dice": 0.18795174608765802,
+      "instance_mean_iou": 0.6533521700025067,
+      "instance_mean_dice": 0.7886866314236766
+    },
+    {
+      "class_id": 3,
+      "class_name": "Healthy",
+      "test_instances": 33,
+      "pred_instances": 0,
+      "pixel_iou": 0.0,
+      "pixel_dice": 0.0,
+      "instance_mean_iou": 0.0,
+      "instance_mean_dice": 0.0
+    },
+    {
+      "class_id": 4,
+      "class_name": "Powdery Mildew",
+      "test_instances": 48,
+      "pred_instances": 4,
+      "pixel_iou": 0.0,
+      "pixel_dice": 0.0,
+      "instance_mean_iou": 0.0,
+      "instance_mean_dice": 0.0
+    }
+  ],
+  "outputs": {
+    "confusion_matrix_normalized": "/media/drive2/manish/codes/aml/skin-lesion-classification/fed_qwen_medmcqa_fcp/DAI/seg/paper_eval_outputs/confusion_matrix_normalized.png",
+    "confusion_matrix_counts": "/media/drive2/manish/codes/aml/skin-lesion-classification/fed_qwen_medmcqa_fcp/DAI/seg/paper_eval_outputs/confusion_matrix_counts.png",
+    "test_class_distribution": "/media/drive2/manish/codes/aml/skin-lesion-classification/fed_qwen_medmcqa_fcp/DAI/seg/paper_eval_outputs/test_class_distribution.png",
+    "predicted_class_distribution": "/media/drive2/manish/codes/aml/skin-lesion-classification/fed_qwen_medmcqa_fcp/DAI/seg/paper_eval_outputs/predicted_class_distribution.png",
+    "per_class_iou_dice": "/media/drive2/manish/codes/aml/skin-lesion-classification/fed_qwen_medmcqa_fcp/DAI/seg/paper_eval_outputs/per_class_iou_dice.png"
+  }
+}
