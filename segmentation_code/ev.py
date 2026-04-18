@@ -1,23 +1,3 @@
-# from ultralytics import YOLO
-
-# model = YOLO("/media/drive2/manish/codes/aml/runs/segment/apple_disease_seg/yolo11l_seg_v5/weights/best.pt")
-
-# metrics = model.val(
-#     data="SegmentAppledisease-5/data.yaml",
-#     split="test",
-#     imgsz=640,
-#     batch=4,
-#     device=0,
-#     plots=True,
-#     save_json=True,
-#     verbose=True,
-# )
-
-# print("Box:", metrics.box.mean_results())
-# print("Mask:", metrics.seg.mean_results())
-
-
-
 #!/usr/bin/env python3
 from __future__ import annotations
 
