@@ -1,7 +1,7 @@
 
 from roboflow import Roboflow
 rf = Roboflow(api_key="8431sjMG859LoZZYdahe")
-project = rf.workspace("kshitizs-workspace").project("segmentappledisease")
+project = rf.workspace("aashma-workspace").project("segmentappledisease")
 version = project.version(5)
 dataset = version.download("coco-segmentation")
 
