@@ -1,0 +1,11 @@
+                precision    recall  f1-score   support
+
+   Anthracnose       0.94      0.95      0.95       266
+     Black Pox       0.99      1.00      0.99       266
+     Black Rot       0.95      0.93      0.94       266
+       Healthy       1.00      0.98      0.99       266
+Powdery Mildew       0.98      1.00      0.99       266
+
+      accuracy                           0.97      1330
+     macro avg       0.97      0.97      0.97      1330
+  weighted avg       0.97      0.97      0.97      1330

@@ -1,0 +1,46 @@
+YOLO11 Classification Report
+================================================================================
+
+DATA
+--------------------------------------------------------------------------------
+Source root : /content/Apple Disease Dataset/Augmentation
+Split root  : /content/yolo11_cls_work/split_dataset
+Classes     : ['Anthracnose', 'Black Pox', 'Black Rot', 'Healthy', 'Powdery Mildew']
+
+TRAINING
+--------------------------------------------------------------------------------
+Model       : yolo11s-cls.pt
+Image size  : 224
+Epochs      : 30
+Batch size  : 64
+Optimizer   : AdamW
+Initial LR  : 0.001
+Dropout     : 0.15
+Loss        : CrossEntropyLoss (default)
+
+TEST RESULTS
+--------------------------------------------------------------------------------
+Accuracy             : 0.972180
+Macro Precision      : 0.972228
+Macro Recall         : 0.972180
+Macro F1             : 0.972120
+Weighted Precision   : 0.972228
+Weighted Recall      : 0.972180
+Weighted F1          : 0.972120
+
+BOOTSTRAP 95% CI
+--------------------------------------------------------------------------------
+accuracy: 0.972180 [0.963139, 0.980451]
+precision_macro: 0.972228 [0.963112, 0.980420]
+recall_macro: 0.972180 [0.962856, 0.980456]
+f1_macro: 0.972120 [0.962761, 0.980349]
+precision_weighted: 0.972228 [0.963165, 0.980559]
+recall_weighted: 0.972180 [0.963139, 0.980451]
+f1_weighted: 0.972120 [0.962848, 0.980433]
+
+OUTPUT DIRECTORIES
+--------------------------------------------------------------------------------
+Training dir  : /content/runs/classify/yolo11_cls_runs/yolo11_cls_default
+Evaluation dir: /content/runs/classify/yolo11_cls_runs/yolo11_cls_default/test_evaluation
+Bootstrap dir : /content/runs/classify/yolo11_cls_runs/yolo11_cls_default/bootstrap
+GradCAM dir   : /content/runs/classify/yolo11_cls_runs/yolo11_cls_default/gradcam_paper

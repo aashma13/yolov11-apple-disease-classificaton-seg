@@ -1,0 +1,10 @@
+Bootstrap Confidence Interval Report (95%)
+============================================================
+
+accuracy: point=0.9722, mean=0.9721, 95% CI=(0.9631, 0.9805), std=0.0045
+precision_macro: point=0.9722, mean=0.9722, 95% CI=(0.9631, 0.9804), std=0.0045
+recall_macro: point=0.9722, mean=0.9722, 95% CI=(0.9629, 0.9805), std=0.0044
+f1_macro: point=0.9721, mean=0.9720, 95% CI=(0.9628, 0.9803), std=0.0045
+precision_weighted: point=0.9722, mean=0.9723, 95% CI=(0.9632, 0.9806), std=0.0045
+recall_weighted: point=0.9722, mean=0.9721, 95% CI=(0.9631, 0.9805), std=0.0045
+f1_weighted: point=0.9721, mean=0.9721, 95% CI=(0.9628, 0.9804), std=0.0046
